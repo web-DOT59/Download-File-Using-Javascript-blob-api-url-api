@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<textarea id="text"></textarea>
+<a id="a1" download="text.txt">download</a>
+<script type="text/javascript">
+	var a1=document.getElementById("a1")
+	a1.addEventListener("click",()=>{
+		var textarea=document.getElementById("text").value;
+		download(textarea)
+
+	})
+	function download(textarea){
+		 const blob=new Blob([textarea],{type:"text/plain"})
+		 a1.href=URL.createObjectURL(blob)
+	}
+
+
+
+
+
+</script>
+
+</body>
+</html>
